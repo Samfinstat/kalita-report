@@ -668,9 +668,8 @@ tr:hover td{background:rgba(255,255,255,.02)}
     </div>
 
     <!-- SPECIALIST SECTION (hidden) -->
-    <div style="text-align:center;margin:8px 0">
-      <button class="spec-trigger" id="specBtn" onclick="toggleSpec()">🔒 Режим специалиста</button>
-      <div class="spec-toggle-hint" id="specHint">Только для внутреннего использования</div>
+    <div class="analyst-only" style="text-align:center;margin:8px 0">
+      <button class="spec-trigger" onclick="toggleSpec()">🔒 / 🔓 Внутренний разбор</button>
     </div>
 
     <div id="spec-section">
@@ -844,7 +843,7 @@ tr:hover td{background:rgba(255,255,255,.02)}
   <!-- FOOTER -->
   <div class="footer">
     <span>КАЛИТА · Отчёт 01.12.2025 — 06.04.2026</span>
-    <button class="spec-trigger" onclick="toggleSpec()">🔒 Режим специалиста</button>
+    <button class="spec-trigger analyst-only" onclick="toggleSpec()">🔒 / 🔓 Внутренний разбор</button>
     <span>Следующий срез: июль 2026</span>
   </div>
 
@@ -852,18 +851,27 @@ tr:hover td{background:rgba(255,255,255,.02)}
 </div><!-- report -->
 
 <script>
-// ── PASSWORD ──
-const PASSWORD = 'kalita2026';
+// ── DUAL PASSWORD SYSTEM ──
+// CLIENT  → видит только клиентскую часть, никаких следов аналитики
+// ANALYST → видит всё, включая внутренний разбор
+const PW_CLIENT  = 'kalita2026';
+const PW_ANALYST = 'analitik2026';
+
+let IS_ANALYST = false;
+
 function checkPw() {
-  const val = document.getElementById('pwInput').value;
+  const val = document.getElementById('pwInput').value.trim();
   const err = document.getElementById('pwError');
-  if (val === PASSWORD) {
+
+  if (val === PW_CLIENT || val === PW_ANALYST) {
+    IS_ANALYST = (val === PW_ANALYST);
     const gate = document.getElementById('gate');
     gate.style.transition = 'opacity .4s';
     gate.style.opacity = '0';
     setTimeout(() => {
       gate.style.display = 'none';
       document.getElementById('report').classList.add('visible');
+      applyMode();
       initAll();
     }, 400);
   } else {
@@ -874,28 +882,33 @@ function checkPw() {
 }
 document.getElementById('pwInput').addEventListener('keydown', e => { if (e.key === 'Enter') checkPw(); });
 
+// Применяем режим сразу после открытия отчёта
+function applyMode() {
+  // Элементы, которые видны ТОЛЬКО аналитику
+  const analystOnly = document.querySelectorAll('.analyst-only');
+  analystOnly.forEach(el => {
+    el.style.display = IS_ANALYST ? '' : 'none';
+  });
+
+  if (IS_ANALYST) {
+    // Аналитик: сразу показываем внутренний блок
+    document.getElementById('spec-section').classList.add('visible');
+  }
+  // Клиент: spec-section остаётся hidden (display:none по умолчанию),
+  // кнопки .analyst-only скрыты — клиент не видит ничего лишнего
+}
+
 // ── SCROLL ──
 function scrollTo(id) {
   const el = document.getElementById(id);
   if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
-// ── SPECIALIST TOGGLE ──
+// ── SPECIALIST TOGGLE (только для аналитика) ──
 function toggleSpec() {
+  if (!IS_ANALYST) return;
   const s = document.getElementById('spec-section');
-  const btn = document.getElementById('specBtn');
-  const hint = document.getElementById('specHint');
-  const isVisible = s.classList.contains('visible');
-  if (isVisible) {
-    s.classList.remove('visible');
-    if (btn) btn.textContent = '🔒 Режим специалиста';
-    if (hint) hint.style.display = '';
-  } else {
-    s.classList.add('visible');
-    if (btn) btn.textContent = '🔓 Скрыть';
-    if (hint) hint.style.display = 'none';
-    s.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  }
+  s.classList.toggle('visible');
 }
 
 // ── SEASON GRID ──
