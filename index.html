@@ -292,6 +292,16 @@ tr:hover td{background:rgba(255,255,255,.02)}
       <div class="kpi-value">3</div>
       <span class="kpi-badge badge-down">↓ было 7 (−4 ключа)</span>
     </div>
+    <div class="kpi-card red">
+      <div class="kpi-label">Кач. лидов (CRM)</div>
+      <div class="kpi-value">3</div>
+      <span class="kpi-badge badge-down">из 46 обращений · 77 620 ₽</span>
+    </div>
+    <div class="kpi-card red">
+      <div class="kpi-label">Реальный CPA</div>
+      <div class="kpi-value">16 719 ₽</div>
+      <span class="kpi-badge badge-down">↑ vs 2 508 ₽ в Директе</span>
+    </div>
   </div>
 
   <!-- SECTION: CONTEXT ADS (overview charts) -->
@@ -721,7 +731,7 @@ tr:hover td{background:rgba(255,255,255,.02)}
     <!-- CLIENT CONCLUSION (public) -->
     <div class="conclusion-client">
       <div class="conclusion-title">📊 Итоговая динамика</div>
-      <p>Апрель показал важный результат — при снижении бюджета на 43% (с 88 до 50 тыс. ₽) стоимость конверсии улучшилась: CPA составил 2 508 ₽ против 3 278 ₽ в марте. Это говорит о том, что кампании становятся эффективнее: деньги расходуются точнее.</p>
+      <p>Апрель принёс первые данные из CRM: зафиксировано 3 качественных лида на сумму 77 620 ₽ при общем бюджете 50 157 ₽ — это положительный результат для первого полного месяца. Кампании привлекают реальных покупателей, готовых к сделке.</p>
       <p>Запущен ретаргетинг — новый инструмент для работы с посетителями сайта, которые не оставили заявку сразу. РСЯ-кампания продолжает давать стабильный поток обращений по низкой цене (CPA 1 331 ₽).</p>
       <p>По SEO в апреле зафиксировано снижение позиций — ряд запросов потерял места в выдаче Яндекса. Сейчас задача — выяснить причину и восстановить ключевые страницы. <b style="color:var(--accent)">Общий вектор: реклама работает эффективнее, SEO требует дополнительного внимания в мае.</b></p>
     </div>
@@ -761,7 +771,52 @@ tr:hover td{background:rgba(255,255,255,.02)}
         </div>
 
         <div class="spec-alert">
-          🚨 <b>Главный риск мая:</b> SEO-падение не объяснено — если причина технические проблемы или фильтр Яндекса, без аудита позиции продолжат падать. Параллельно: ретаргетинг без наращивания бюджета не даст результата. Приоритет: SEO-аудит + настройка ретаргетинговых аудиторий в Метрике.
+          🚨 <b>Критическое расхождение Директ vs CRM:</b><br>
+          Директ: 20 конверсий, CPA 2 508 ₽<br>
+          CRM (апрель): 46 обращений → <b>3 качественных лида</b>, конверсия в качество 6.5%<br>
+          Реальный CPA = 50 157 / 3 = <b>16 719 ₽</b><br><br>
+          Структура лидов: 36 некачественных (78%), 7 в работе, 3 качественных на 77 620 ₽.<br>
+          Причины некачества требуют анализа: нецелевые запросы, мусорный трафик РСЯ, нерелевантная аудитория.<br><br>
+          Приоритет: SEO-аудит (падение позиций) + разбор 36 некачественных лидов по источникам.
+          <div class="spec-section-head">📊 CRM — Апрель 2026 (Битрикс24)</div>
+          <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-bottom:14px">
+            <div style="background:rgba(183,148,244,.06);border:1px solid rgba(183,148,244,.15);border-radius:10px;padding:12px;text-align:center">
+              <div style="font-size:10px;text-transform:uppercase;color:var(--purple);margin-bottom:4px">Всего обращений</div>
+              <div style="font-family:'Unbounded',sans-serif;font-size:20px;font-weight:700">46</div>
+              <div style="font-size:10px;color:var(--text3)">апрель 2026</div>
+            </div>
+            <div style="background:rgba(252,129,129,.06);border:1px solid rgba(252,129,129,.2);border-radius:10px;padding:12px;text-align:center">
+              <div style="font-size:10px;text-transform:uppercase;color:var(--red);margin-bottom:4px">Некачественных</div>
+              <div style="font-family:'Unbounded',sans-serif;font-size:20px;font-weight:700;color:var(--red)">36</div>
+              <div style="font-size:10px;color:var(--text3)">78% от всех</div>
+            </div>
+            <div style="background:rgba(246,173,85,.06);border:1px solid rgba(246,173,85,.2);border-radius:10px;padding:12px;text-align:center">
+              <div style="font-size:10px;text-transform:uppercase;color:var(--yellow);margin-bottom:4px">В работе</div>
+              <div style="font-family:'Unbounded',sans-serif;font-size:20px;font-weight:700;color:var(--yellow)">7</div>
+              <div style="font-size:10px;color:var(--text3)">обрабатываются</div>
+            </div>
+            <div style="background:rgba(104,211,145,.06);border:1px solid rgba(104,211,145,.2);border-radius:10px;padding:12px;text-align:center">
+              <div style="font-size:10px;text-transform:uppercase;color:var(--green);margin-bottom:4px">Качественных</div>
+              <div style="font-family:'Unbounded',sans-serif;font-size:20px;font-weight:700;color:var(--green)">3</div>
+              <div style="font-size:10px;color:var(--text3)">6.5% конверсия</div>
+            </div>
+            <div style="background:rgba(104,211,145,.06);border:1px solid rgba(104,211,145,.2);border-radius:10px;padding:12px;text-align:center">
+              <div style="font-size:10px;text-transform:uppercase;color:var(--green);margin-bottom:4px">Сумма сделок</div>
+              <div style="font-family:'Unbounded',sans-serif;font-size:20px;font-weight:700;color:var(--green)">77 620 ₽</div>
+              <div style="font-size:10px;color:var(--text3)">ср. чек 25 873 ₽</div>
+            </div>
+          </div>
+          <ul class="spec-list">
+            <li>Реальный CPA по качественным лидам: 50 157 ₽ / 3 = <b style="color:var(--red)">16 719 ₽</b> — в 6.7х выше чем CPA в Директе (2 508 ₽)</li>
+            <li>78% некачественных лидов — нужно разобрать по источникам: какая кампания/канал даёт мусор. Вероятный виновник: РСЯ (857 кликов широкой аудитории)</li>
+            <li>7 лидов «в работе» — если часть конвертируется, реальный CPA улучшится. Запросить статус у клиента через 1–2 недели</li>
+            <li>Качественные лиды: Олег (23.04), Вячеслав 66 220 ₽ (20.04), заявка 11 400 ₽ — источники не видны, нужна UTM-разметка</li>
+            <li>Средний чек 25 873 ₽ при реальном CPA 16 719 ₽ — маржа на уровне. Но нужно снижать долю некачественных лидов</li>
+            <li>Рекомендация: добавить UTM-метки ко всем источникам, чтобы видеть какой канал даёт качественных лидов vs мусор</li>
+          </ul>
+          <div style="background:rgba(246,173,85,.08);border:1px solid rgba(246,173,85,.2);border-radius:10px;padding:13px 15px;margin-top:10px;font-size:12px;color:var(--yellow);line-height:1.6">
+            ⚠️ <b>Задача на май:</b> разобрать 36 некачественных лидов — по какому каналу пришли (звонок/сайт/Telegram), с какой кампании. Если большинство с РСЯ — снизить ставки РСЯ и ужесточить таргетинг. Если с поиска — пересмотреть минус-слова.
+          </div>
         </div>
 
         <div class="spec-section-head">🟡 Что недоделано из прошлого отчёта</div>
