@@ -229,7 +229,7 @@ tr:hover td{background:rgba(255,255,255,.02)}
 <div id="gate">
   <div class="gate-box">
     <div class="gate-logo">КАЛИТА</div>
-    <div class="gate-sub">Аналитический отчёт · Декабрь 2025 — Апрель 2026</div>
+    <div class="gate-sub">Аналитический отчёт · Декабрь 2025 — Август 2026</div>
     <input class="gate-input" type="password" id="pwInput" placeholder="••••••••" autocomplete="off">
     <button class="gate-btn" onclick="checkPw()">ВОЙТИ</button>
     <div class="gate-error" id="pwError">Неверный пароль</div>
@@ -324,7 +324,7 @@ tr:hover td{background:rgba(255,255,255,.02)}
     <div class="two-col">
       <div class="chart-card">
         <div class="chart-title">Расход по месяцам, ₽</div>
-        <div class="chart-subtitle">Декабрь 2025 — Апрель 2026</div>
+        <div class="chart-subtitle">Декабрь 2025 — Август 2026</div>
         <div class="chart-wrap"><canvas id="spendChart"></canvas></div>
       </div>
       <div class="chart-card">
@@ -865,24 +865,52 @@ tr:hover td{background:rgba(255,255,255,.02)}
             </div>
             <div style="height:8px;background:var(--bg3);border-radius:4px;overflow:hidden"><div style="width:50%;height:100%;background:var(--red);border-radius:4px"></div></div>
           </div>
+          <div style="margin-bottom:16px">
+            <div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:6px">
+              <span style="color:var(--text2)">Апрель — рост аукциона</span>
+              <span style="color:var(--red);font-weight:600">CPC 54 ₽</span>
+            </div>
+            <div style="height:8px;background:var(--bg3);border-radius:4px;overflow:hidden"><div style="width:60%;height:100%;background:var(--red);border-radius:4px"></div></div>
+          </div>
+          <div style="margin-bottom:16px">
+            <div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:6px">
+              <span style="color:var(--text2)">Май — переход на РСЯ</span>
+              <span style="color:var(--green);font-weight:600">CPC 22 ₽ ↓</span>
+            </div>
+            <div style="height:8px;background:var(--bg3);border-radius:4px;overflow:hidden"><div style="width:24%;height:100%;background:var(--green);border-radius:4px"></div></div>
+          </div>
+          <div style="margin-bottom:16px">
+            <div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:6px">
+              <span style="color:var(--text2)">Июнь — летний сезон</span>
+              <span style="color:var(--yellow);font-weight:600">CPC 35 ₽</span>
+            </div>
+            <div style="height:8px;background:var(--bg3);border-radius:4px;overflow:hidden"><div style="width:39%;height:100%;background:var(--yellow);border-radius:4px"></div></div>
+          </div>
+          <div style="margin-bottom:16px">
+            <div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:6px">
+              <span style="color:var(--text2)">Июль — пик конкуренции</span>
+              <span style="color:var(--yellow);font-weight:600">CPC 35 ₽</span>
+            </div>
+            <div style="height:8px;background:var(--bg3);border-radius:4px;overflow:hidden"><div style="width:39%;height:100%;background:var(--yellow);border-radius:4px"></div></div>
+          </div>
           <div>
             <div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:6px">
-              <span style="color:var(--text2)">Апрель (неполный) — рост аукциона</span>
-              <span style="color:var(--red);font-weight:600">CPC 85 ₽ ↑ x3.5</span>
+              <span style="color:var(--text2)">Август — стабилизация</span>
+              <span style="color:var(--yellow);font-weight:600">CPC 39 ₽</span>
             </div>
-            <div style="height:8px;background:var(--bg3);border-radius:4px;overflow:hidden"><div style="width:78%;height:100%;background:var(--red);border-radius:4px"></div></div>
+            <div style="height:8px;background:var(--bg3);border-radius:4px;overflow:hidden"><div style="width:43%;height:100%;background:var(--yellow);border-radius:4px"></div></div>
           </div>
         </div>
         <div style="margin-top:16px;padding:12px;background:var(--bg3);border-radius:8px;font-size:12px;color:var(--text2);border:1px solid var(--border)">
-          💡 Рост CPC на 3.5x объясняется не ошибками в кампаниях, а <b style="color:var(--text)">сезонным увеличением конкуренции</b>: весной активизируются строительный сектор, с/х производители (биг-бэги для удобрений и зерна) и конкуренты в нише МКР.
+          💡 Летний пик оказался мягче худшего сценария из прогноза (80-120₽): реальный CPC держался в диапазоне 22-39₽ благодаря РСЯ и товарной кампании — платному трафику с более низкой конкуренцией за клик, а не поисковым ставкам, которые действительно росли бы в разы в пик сезона.
         </div>
       </div>
       <div class="chart-card">
         <div class="chart-title">Прогноз конкурентного давления</div>
-        <div class="chart-subtitle">Ожидаемая динамика CPC по месяцам</div>
+        <div class="chart-subtitle">Факт по август + прогноз на сентябрь</div>
         <div class="chart-wrap" style="height:240px"><canvas id="cpcForecast"></canvas></div>
         <div style="margin-top:14px;font-size:12px;color:var(--text2);line-height:1.6;padding:12px;background:var(--bg3);border-radius:8px;border:1px solid var(--border)">
-          🔮 <b style="color:var(--yellow)">Май–август</b> — пик аукциона, CPC может достигнуть 80–120 ₽. Стратегия: фокус на высококонверсионном МКР, жёсткий контроль ставок, расширение через РСЯ (CPC 16 ₽).
+          🔮 <b style="color:var(--yellow)">Сентябрь</b> — вторая волна сезонного спроса (с/х уборочная), конкуренция может немного вырасти. Стратегия: масштабировать товарную кампанию (CPA 443₽), калибровать ставки ПОСИК МКР, держать бюджет РСЯ под контролем.
         </div>
       </div>
     </div>
@@ -901,8 +929,9 @@ tr:hover td{background:rgba(255,255,255,.02)}
         <div class="comp-card-title">📅 Когда конкуренты активны</div>
         <div class="comp-metric"><span>Декабрь–Январь</span><span class="comp-metric-val" style="color:var(--green)">Тихо → наш шанс</span></div>
         <div class="comp-metric"><span>Февраль–Март</span><span class="comp-metric-val" style="color:var(--yellow)">Пробуждение</span></div>
-        <div class="comp-metric"><span>Апрель–Май</span><span class="comp-metric-val" style="color:var(--red)">Пик</span></div>
-        <div class="comp-metric"><span>Июнь–Август</span><span class="comp-metric-val" style="color:var(--red)">Максимум</span></div>
+        <div class="comp-metric"><span>Апрель–Май</span><span class="comp-metric-val" style="color:var(--yellow)">Рост</span></div>
+        <div class="comp-metric"><span>Июнь–Июль</span><span class="comp-metric-val" style="color:var(--red)">Пик сезона</span></div>
+        <div class="comp-metric"><span>Август</span><span class="comp-metric-val" style="color:var(--yellow)">Стабилизация</span></div>
         <div class="comp-metric"><span>Сентябрь–Октябрь</span><span class="comp-metric-val" style="color:var(--yellow)">2-я волна (с/х)</span></div>
       </div>
       <div class="comp-card">
@@ -1354,7 +1383,7 @@ function buildSeasonGrid() {
   const grid = document.getElementById('seasonGrid');
   months.forEach((m, i) => {
     const el = document.createElement('div');
-    el.className = 'season-cell ' + levels[i] + (i === 3 ? ' s-current' : '');
+    el.className = 'season-cell ' + levels[i] + (i === 7 ? ' s-current' : '');
     el.innerHTML = `<span class="s-month">${m}</span><span class="s-level">${labels[i]}</span>`;
     grid.appendChild(el);
   });
